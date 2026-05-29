@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Infanet — Internet en Ayacucho | ISP Lucanas | Proveedor Internet Huanca</title>
+  <meta name="description" content="Infanet: proveedor de internet en Ayacucho con planes accesibles para hogares y empresas. Instalación rápida, router incluido y soporte 24/7 en Lucanas y Huanca." />
+  <meta name="keywords" content="internet en Ayacucho, ISP Ayacucho, proveedor internet Lucanas, internet para hogares Ayacucho, planes de internet Ayacucho, internet económico hogar, cobertura internet Lucanas, contratar internet Ayacucho, internet Huanca Santa Lucía" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://infanet-ayacucho.netlify.app/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://infanet-ayacucho.netlify.app/" />
+  <meta property="og:title" content="Infanet — Proveedor de Internet en Ayacucho" />
+  <meta property="og:description" content="Internet accesible, estable y con soporte 24/7 para familias y negocios de Ayacucho." />
+  <meta property="og:locale" content="es_PE" />
+  <meta property="og:site_name" content="Infanet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Infanet",
+    "description": "Proveedor de servicios de internet (ISP) en Ayacucho, Perú.",
+    "url": "https://infanet-ayacucho.netlify.app/",
+    "telephone": "+51-000-000000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Anexo de Huanca",
+      "addressLocality": "Santa Lucía",
+      "addressRegion": "Ayacucho",
+      "addressCountry": "PE"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Lucanas" },
+      { "@type": "City", "name": "Huanca" },
+      { "@type": "State", "name": "Ayacucho" }
+    ],
+    "openingHours": "Mo-Su 00:00-23:59"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      /* Palette: Azul noche + Dorado + Crema */
+      --navy:       #0b1628;
+      --navy2:      #0f1f3a;
+      --navy3:      #142747;
+      --navy-mid:   #1a3260;
+      --gold:       #c9a84c;
+      --gold2:      #e2c06a;
+      --gold3:      #f0d48a;
+      --gold-dark:  #8a6a1f;
+      --cream:      #f7f2e8;
+      --cream2:     #ede6d5;
+      --cream3:     #e2d8c4;
+      --mist:       rgba(201,168,76,0.08);
+      --mist2:      rgba(201,168,76,0.15);
+      --white:      #faf8f3;
+      --border:     rgba(201,168,76,0.15);
+      --border-dim: rgba(201,168,76,0.08);
+      --border-ink: rgba(11,22,40,0.12);
+      --r:          6px;
+      --r-lg:       14px;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans:  'DM Sans', sans-serif;
+      --font-mono:  'IBM Plex Mono', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--navy);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* Grain overlay */
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 9999; opacity: 0.55;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 clamp(1.5rem, 5vw, 3.5rem);
+      background: rgba(247,242,232,0.92);
+      backdrop-filter: blur(24px) saturate(1.5);
+      border-bottom: 1px solid var(--border-ink);
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    nav.scrolled {
+      background: rgba(247,242,232,0.98);
+      box-shadow: 0 1px 24px rgba(11,22,40,0.07);
+    }
+
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      display: flex; align-items: center; gap: 0.55rem;
+    }
+    .nav-pulse {
+      width: 7px; height: 7px;
+      background: var(--gold);
+      border-radius: 50%;
+      position: relative; flex-shrink: 0;
+    }
+    .nav-pulse::after {
+      content: '';
+      position: absolute; inset: -4px;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+      animation: pulse-ring 2.2s ease infinite;
+    }
+    @keyframes pulse-ring {
+      0%,100% { opacity: 0.9; transform: scale(1); }
+      60% { opacity: 0; transform: scale(2); }
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      color: rgba(11,22,40,0.5);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--navy); }
+
+    .nav-cta {
+      background: var(--navy) !important;
+      color: var(--gold) !important;
+      padding: 0.5rem 1.3rem !important;
+      border-radius: var(--r);
+      font-family: var(--font-mono) !important;
+      font-size: 0.72rem !important;
+      letter-spacing: 0.3px !important;
+      text-transform: none !important;
+      transition: background 0.2s, transform 0.15s !important;
+      border: 1px solid rgba(201,168,76,0.2) !important;
+    }
+    .nav-cta:hover { background: var(--navy2) !important; transform: translateY(-1px) !important; color: var(--gold2) !important; }
+
+    .nav-toggle { display: none; cursor: pointer; background: none; border: none; flex-direction: column; gap: 5px; }
+    .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--navy); transition: all 0.3s; }
+
+    /* ─── HERO ─── */
+    #inicio {
+      min-height: 100vh;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: 0 clamp(1.5rem, 6vw, 4rem);
+    }
+
+    /* Gradient mesh background */
+    #inicio::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 75% 60%, rgba(201,168,76,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 20% 30%, rgba(26,50,96,0.8) 0%, transparent 70%),
+        radial-gradient(ellipse 80% 80% at 50% 50%, var(--navy2) 0%, var(--navy) 100%);
+      z-index: 0;
+    }
+
+    /* Fine grid overlay */
+    #inicio::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px);
+      background-size: 48px 48px;
+      z-index: 0;
+    }
+
+    .hero-inner {
+      position: relative; z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 0;
+      align-items: center;
+      max-width: 1280px;
+      margin: 0 auto;
+      width: 100%;
+      padding-top: clamp(7rem, 14vw, 10rem);
+      padding-bottom: 3rem;
+    }
+
+    .hero-left { padding-right: 3rem; }
+
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 2.5px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      display: flex; align-items: center; gap: 0.75rem;
+      opacity: 0; animation: fadeUp 0.7s 0.1s forwards;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block; width: 36px; height: 1px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(3.2rem, 7vw, 6rem);
+      font-weight: 700;
+      line-height: 0.95;
+      letter-spacing: -1px;
+      color: var(--white);
+      margin-bottom: 2rem;
+      opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--gold2);
+    }
+    h1 .hl {
+      position: relative;
+      color: var(--white);
+      display: inline-block;
+    }
+    h1 .hl::after {
+      content: '';
+      position: absolute;
+      bottom: 4px; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: rgba(247,242,232,0.6);
+      font-weight: 300;
+      max-width: 420px;
+      line-height: 1.8;
+      margin-bottom: 2.75rem;
+      opacity: 0; animation: fadeUp 0.8s 0.3s forwards;
+    }
+
+    .hero-actions {
+      display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+      opacity: 0; animation: fadeUp 0.8s 0.4s forwards;
+    }
+
+    .btn-fill {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      padding: 0.95rem 2.1rem;
+      border-radius: var(--r);
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(201,168,76,0.3);
+    }
+    .btn-fill:hover { background: var(--gold2); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,168,76,0.35); }
+    .btn-fill svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(201,168,76,0.4);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .btn-ghost:hover { color: var(--gold2); border-color: var(--gold2); }
+
+    /* Hero visual — signal rings */
+    .hero-right {
+      display: flex; justify-content: center; align-items: center;
+      opacity: 0; animation: fadeIn 1.2s 0.5s forwards;
+    }
+
+    .signal-art {
+      position: relative;
+      width: 300px; height: 300px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .signal-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,76,0.18);
+    }
+    .signal-ring:nth-child(1) { width: 300px; height: 300px; animation: ring-breathe 4s ease-in-out infinite; }
+    .signal-ring:nth-child(2) { width: 220px; height: 220px; animation: ring-breathe 4s 0.5s ease-in-out infinite; border-color: rgba(201,168,76,0.28); }
+    .signal-ring:nth-child(3) { width: 145px; height: 145px; animation: ring-breathe 4s 1s ease-in-out infinite; border-color: rgba(201,168,76,0.4); }
+    .signal-ring:nth-child(4) { width: 80px; height: 80px; border: none; background: radial-gradient(circle, var(--gold2), var(--gold)); animation: ring-pulse 3s ease-in-out infinite; box-shadow: 0 0 40px rgba(201,168,76,0.5), 0 0 80px rgba(201,168,76,0.2); }
+    @keyframes ring-breathe {
+      0%,100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.03); }
+    }
+    @keyframes ring-pulse {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .signal-label {
+      position: absolute;
+      bottom: -2.5rem; left: 50%; transform: translateX(-50%);
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .signal-geo {
+      position: absolute;
+      top: 0.5rem; right: -1rem;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: rgba(201,168,76,0.5);
+      letter-spacing: 0.5px;
+    }
+
+    /* Hero stats */
+    .hero-stats-bar {
+      position: relative; z-index: 1;
+      max-width: 1280px; margin: 0 auto; width: 100%;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid rgba(201,168,76,0.2);
+    }
+    .stat-item {
+      padding: 2rem clamp(1rem, 3vw, 2.5rem);
+      border-right: 1px solid rgba(201,168,76,0.12);
+      opacity: 0; animation: fadeUp 0.7s forwards;
+    }
+    .stat-item:nth-child(1) { animation-delay: 0.5s; }
+    .stat-item:nth-child(2) { animation-delay: 0.6s; }
+    .stat-item:nth-child(3) { animation-delay: 0.7s; }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1;
+      color: var(--gold2);
+      margin-bottom: 0.35rem;
+    }
+    .stat-label { font-size: 0.74rem; color: rgba(247,242,232,0.45); letter-spacing: 0.3px; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: none; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* ─── SECTION COMMON ─── */
+    section { padding: clamp(5rem, 9vw, 7.5rem) clamp(1.5rem, 6vw, 4rem); }
+    .wrap { max-width: 1280px; margin: 0 auto; }
+
+    .section-kicker {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .section-kicker::before {
+      content: '';
+      display: block; width: 24px; height: 1px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+
+    h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.5px;
+      line-height: 1.08;
+      margin-bottom: 0.75rem;
+    }
+    h2 em { font-style: italic; color: var(--gold-dark); }
+
+    .section-sub {
+      font-size: 0.94rem;
+      color: rgba(11,22,40,0.55);
+      font-weight: 300;
+      max-width: 500px;
+      line-height: 1.75;
+      margin-bottom: 3.5rem;
+    }
+
+    /* ─── REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.12s; }
+    .reveal-delay-2 { transition-delay: 0.22s; }
+    .reveal-delay-3 { transition-delay: 0.32s; }
+
+    /* ─── PLANES ─── */
+    #planes { background: var(--navy); }
+    #planes h2 { color: var(--white); }
+    #planes .section-sub { color: rgba(247,242,232,0.45); }
+    #planes .section-kicker { color: var(--gold); }
+    #planes .section-kicker::before { background: linear-gradient(90deg, var(--gold2), transparent); }
+
+    .planes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.12);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+    }
+
+    .plan-card {
+      background: var(--navy2);
+      padding: 2.75rem 2.25rem;
+      position: relative;
+      transition: background 0.25s;
+    }
+    .plan-card:hover { background: var(--navy3); }
+    .plan-card.featured {
+      background: linear-gradient(160deg, var(--gold-dark), #6a4c10);
+    }
+    .plan-card.featured:hover { background: linear-gradient(160deg, var(--gold), var(--gold-dark)); }
+
+    /* Decorative corner accent */
+    .plan-card::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 60px; height: 60px;
+      border-top: 1px solid rgba(201,168,76,0.15);
+      border-right: 1px solid rgba(201,168,76,0.15);
+      border-radius: 0 var(--r-lg) 0 0;
+    }
+    .plan-card.featured::before {
+      border-top-color: rgba(255,255,255,0.15);
+      border-right-color: rgba(255,255,255,0.15);
+    }
+
+    .plan-tag {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(201,168,76,0.5);
+      margin-bottom: 1.75rem;
+    }
+    .plan-card.featured .plan-tag { color: rgba(247,242,232,0.6); }
+
+    .plan-name {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+      line-height: 1.1;
+    }
+    .plan-card.featured .plan-name { color: var(--cream); }
+
+    .plan-kw { font-size: 0.7rem; color: rgba(201,168,76,0.35); margin-bottom: 1.75rem; line-height: 1.5; }
+    .plan-card.featured .plan-kw { color: rgba(247,242,232,0.35); }
+
+    .plan-price {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+    .plan-card.featured .plan-price { color: var(--cream2); }
+
+    .plan-features {
+      list-style: none;
+      margin-bottom: 2.5rem;
+      display: flex; flex-direction: column; gap: 0.65rem;
+    }
+    .plan-features li {
+      font-size: 0.86rem;
+      color: rgba(247,242,232,0.65);
+      display: flex; align-items: flex-start; gap: 0.7rem;
+      line-height: 1.55;
+    }
+    .plan-card.featured .plan-features li { color: rgba(247,242,232,0.85); }
+    .plan-features li::before {
+      content: '';
+      display: block; width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 6px; flex-shrink: 0;
+    }
+    .plan-card.featured .plan-features li::before { background: var(--cream); }
+
+    .plan-btn {
+      display: block; text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.4px;
+      padding: 0.9rem;
+      border-radius: var(--r);
+      text-decoration: none;
+      transition: all 0.2s;
+      border: 1px solid rgba(201,168,76,0.2);
+      color: var(--gold);
+      background: transparent;
+    }
+    .plan-btn:hover { background: rgba(201,168,76,0.08); color: var(--gold2); border-color: rgba(201,168,76,0.4); }
+    .plan-btn.dark {
+      background: var(--navy);
+      color: var(--gold2);
+      border-color: transparent;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+    .plan-btn.dark:hover { background: var(--navy2); }
+
+    .pop-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      background: rgba(247,242,232,0.15);
+      color: var(--white);
+      padding: 0.25rem 0.65rem;
+      border-radius: 3px;
+      margin-bottom: 1rem;
+    }
+
+    /* ─── SERVICIOS ─── */
+    #servicios { background: var(--cream2); }
+
+    .servicios-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .serv-card {
+      background: var(--white);
+      border: 1px solid var(--border-ink);
+      border-radius: var(--r-lg);
+      padding: 2.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    }
+    .serv-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .serv-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(11,22,40,0.1); border-color: rgba(201,168,76,0.25); }
+    .serv-card:hover::before { opacity: 1; }
+
+    .serv-num {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: rgba(11,22,40,0.25);
+      letter-spacing: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    .serv-icon-wrap {
+      width: 48px; height: 48px;
+      background: var(--navy);
+      border-radius: var(--r);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .serv-icon-wrap svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+    .serv-title {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.7rem;
+    }
+    .serv-desc { font-size: 0.86rem; color: rgba(11,22,40,0.55); line-height: 1.7; }
+    .serv-kw { font-size: 0.67rem; color: rgba(11,22,40,0.3); margin-top: 0.85rem; font-family: var(--font-mono); }
+
+    /* ─── COBERTURA ─── */
+    #cobertura { background: var(--cream); }
+
+    .cobertura-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .cobertura-art {
+      position: relative;
+      height: 380px;
+      background: var(--navy);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      border: 1px solid rgba(201,168,76,0.15);
+    }
+    .cobertura-art::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.06) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+    .cobertura-art::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(201,168,76,0.08) 0%, transparent 70%);
+    }
+
+    .map-content {
+      position: absolute; inset: 0; z-index: 1;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 1.1rem;
+    }
+    .map-ping {
+      width: 18px; height: 18px;
+      background: var(--gold);
+      border-radius: 50%;
+      position: relative;
+      box-shadow: 0 0 20px rgba(201,168,76,0.6);
+    }
+    .map-ping::before, .map-ping::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+      animation: cov-expand 2.8s ease-out infinite;
+    }
+    .map-ping::before { inset: -14px; animation-delay: 0s; }
+    .map-ping::after  { inset: -28px; animation-delay: 0.7s; }
+    @keyframes cov-expand {
+      0% { opacity: 0.7; transform: scale(0.7); }
+      100% { opacity: 0; transform: scale(1.5); }
+    }
+    .map-label-main {
+      font-family: var(--font-serif);
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--white); text-align: center;
+    }
+    .map-label-sub {
+      font-family: var(--font-mono);
+      font-size: 0.62rem; color: var(--gold);
+      letter-spacing: 2px; text-transform: uppercase;
+    }
+    .map-coords {
+      position: absolute; bottom: 1.25rem; left: 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.58rem; color: rgba(201,168,76,0.4); letter-spacing: 0.5px;
+    }
+    .map-tag {
+      position: absolute; top: 1.25rem; right: 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.6rem; color: var(--gold);
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.25);
+      padding: 0.3rem 0.7rem;
+      border-radius: 3px; letter-spacing: 1px; text-transform: uppercase;
+    }
+
+    .zonas-list { display: flex; flex-direction: column; gap: 0; }
+    .zona-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.25rem;
+      align-items: start;
+      padding: 1.6rem 0;
+      border-bottom: 1px solid var(--border-ink);
+    }
+    .zona-item:last-child { border-bottom: none; }
+    .zona-num { font-family: var(--font-mono); font-size: 0.62rem; color: var(--gold-dark); padding-top: 4px; letter-spacing: 1px; }
+    .zona-name { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.3rem; }
+    .zona-desc { font-size: 0.83rem; color: rgba(11,22,40,0.55); line-height: 1.65; }
+    .zona-kw { font-size: 0.63rem; color: rgba(11,22,40,0.3); margin-top: 0.4rem; font-family: var(--font-mono); }
+
+    /* ─── NOSOTROS ─── */
+    #nosotros { background: var(--cream2); }
+    .nosotros-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 5rem; align-items: start;
+    }
+    .nosotros-intro {
+      font-family: var(--font-serif);
+      font-size: clamp(1.2rem, 2.5vw, 1.65rem);
+      font-weight: 400; line-height: 1.6;
+      color: var(--navy);
+      margin-bottom: 2.5rem;
+    }
+    .nosotros-intro em { font-style: italic; color: var(--gold-dark); }
+
+    .dif-row {
+      display: flex; gap: 1rem; align-items: flex-start;
+      padding: 1.1rem 0;
+      border-top: 1px solid var(--border-ink);
+    }
+    .dif-row:last-child { border-bottom: 1px solid var(--border-ink); }
+    .dif-icon {
+      width: 34px; height: 34px;
+      background: var(--navy);
+      border-radius: var(--r);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .dif-icon svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .dif-text { font-size: 0.88rem; color: rgba(11,22,40,0.6); line-height: 1.65; }
+    .dif-text strong { color: var(--navy); font-weight: 600; }
+
+    .mv-stack { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
+    .mv-card {
+      background: var(--white);
+      border: 1px solid var(--border-ink);
+      border-left: 3px solid var(--gold);
+      border-radius: var(--r);
+      padding: 1.5rem;
+    }
+    .mv-label {
+      font-family: var(--font-mono);
+      font-size: 0.63rem; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold-dark); margin-bottom: 0.5rem;
+    }
+    .mv-text {
+      font-family: var(--font-serif);
+      font-size: 0.98rem; font-style: italic;
+      color: var(--navy); line-height: 1.65;
+    }
+
+    .valores-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .valor-card {
+      background: var(--white);
+      border: 1px solid var(--border-ink);
+      border-radius: var(--r-lg);
+      padding: 1.35rem;
+      transition: border-color 0.2s;
+    }
+    .valor-card:hover { border-color: rgba(201,168,76,0.3); }
+    .valor-top { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.45rem; }
+    .valor-icon {
+      width: 30px; height: 30px;
+      background: var(--cream2);
+      border-radius: var(--r);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .valor-icon svg { width: 14px; height: 14px; stroke: var(--navy); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .valor-title { font-size: 0.87rem; font-weight: 600; color: var(--navy); }
+    .valor-desc { font-size: 0.78rem; color: rgba(11,22,40,0.5); line-height: 1.55; }
+
+    /* ─── CONTACTO ─── */
+    #contacto { background: var(--navy); }
+    #contacto h2 { color: var(--white); }
+    #contacto .section-sub { color: rgba(247,242,232,0.45); }
+    #contacto .section-kicker { color: var(--gold); }
+    #contacto .section-kicker::before { background: linear-gradient(90deg, var(--gold2), transparent); }
+
+    .contacto-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: start;
+    }
+
+    .contact-cards { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
+    .contact-card {
+      display: flex; align-items: center; gap: 1.25rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(201,168,76,0.12);
+      border-radius: var(--r-lg);
+      padding: 1.35rem 1.5rem;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .contact-card:hover { background: rgba(201,168,76,0.06); border-color: rgba(201,168,76,0.25); transform: translateX(4px); }
+
+    .cc-icon {
+      width: 46px; height: 46px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: var(--r);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .cc-icon svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .cc-label { font-family: var(--font-mono); font-size: 0.6rem; color: rgba(247,242,232,0.35); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.2rem; }
+    .cc-text { font-family: var(--font-serif); font-size: 1rem; font-weight: 700; color: var(--white); }
+    .cc-sub { font-size: 0.7rem; color: var(--gold); margin-top: 0.15rem; }
+
+    .loc-box {
+      background: rgba(201,168,76,0.05);
+      border: 1px solid rgba(201,168,76,0.12);
+      border-left: 2px solid var(--gold);
+      border-radius: var(--r);
+      padding: 1.25rem 1.5rem;
+    }
+    .loc-label { font-family: var(--font-mono); font-size: 0.6rem; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .loc-text { font-size: 0.88rem; color: rgba(247,242,232,0.6); line-height: 1.7; }
+
+    /* Form */
+    .form-box {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(201,168,76,0.12);
+      border-radius: var(--r-lg);
+      padding: 2.5rem 2.25rem;
+    }
+    .form-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem; font-weight: 700;
+      color: var(--white); margin-bottom: 2rem;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label {
+      display: block; font-size: 0.7rem; font-weight: 500;
+      color: rgba(247,242,232,0.4); letter-spacing: 0.8px;
+      margin-bottom: 0.45rem; text-transform: uppercase;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.12);
+      border-radius: var(--r);
+      padding: 0.85rem 1rem;
+      color: var(--white);
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      -webkit-appearance: none;
+    }
+    .form-group input::placeholder { color: rgba(247,242,232,0.2); }
+    .form-group textarea::placeholder { color: rgba(247,242,232,0.2); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: rgba(201,168,76,0.4);
+      background: rgba(201,168,76,0.04);
+    }
+    .form-group select { cursor: pointer; }
+    .form-group select option { background: var(--navy); color: var(--white); }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+
+    .form-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--navy);
+      font-family: var(--font-mono);
+      font-weight: 500; font-size: 0.82rem;
+      letter-spacing: 0.4px;
+      padding: 1.05rem; border: none; border-radius: var(--r);
+      cursor: pointer;
+      transition: filter 0.2s, transform 0.15s, box-shadow 0.2s;
+      margin-top: 0.5rem;
+      box-shadow: 0 4px 18px rgba(201,168,76,0.25);
+    }
+    .form-btn:hover { filter: brightness(1.1); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,168,76,0.35); }
+    .form-btn:active { transform: translateY(0); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #060e1a;
+      border-top: 1px solid rgba(201,168,76,0.1);
+      padding: 2.75rem clamp(1.5rem,6vw,4rem);
+    }
+    .footer-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;
+    }
+    .footer-logo { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 700; color: var(--gold); }
+    .footer-tag { font-family: var(--font-mono); font-size: 0.63rem; color: rgba(201,168,76,0.35); letter-spacing: 0.5px; margin-top: 0.2rem; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.78rem; color: rgba(247,242,232,0.35); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-copy { font-family: var(--font-mono); font-size: 0.63rem; color: rgba(247,242,232,0.2); letter-spacing: 0.5px; }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 900px) {
+      .hero-inner, .cobertura-grid, .nosotros-grid, .contacto-grid {
+        grid-template-columns: 1fr; gap: 3rem;
+      }
+      .hero-left { padding-right: 0; }
+      .hero-right { display: none; }
+      .planes-grid, .servicios-grid { grid-template-columns: 1fr; }
+      .hero-stats-bar { grid-template-columns: repeat(3, 1fr); }
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: fixed; top: 64px; left: 0; right: 0;
+        background: rgba(247,242,232,0.98);
+        backdrop-filter: blur(24px);
+        padding: 2rem clamp(1.5rem,5vw,3.5rem);
+        border-bottom: 1px solid var(--border-ink);
+        gap: 1.5rem; z-index: 199; align-items: flex-start;
+      }
+      .nav-links.open a { font-size: 0.95rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .valores-grid { grid-template-columns: 1fr; }
+      .hero-stats-bar { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.12); }
+      .stat-item:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#inicio" class="nav-logo">
+    <span class="nav-pulse"></span>
+    Infanet
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#planes">Planes</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#cobertura">Cobertura</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#contacto" class="nav-cta">Contratar →</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="inicio">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">ISP local — Lucanas, Ayacucho</div>
+      <h1>
+        <em>Internet</em><br>
+        para <span class="hl">Ayacucho</span><br>
+        de verdad
+      </h1>
+      <p class="hero-desc">
+        Proveedor local en Lucanas y Huanca. Sin los tiempos de espera de los grandes operadores: instalación rápida, equipos incluidos y soporte técnico real.
+      </p>
+      <div class="hero-actions">
+        <a href="#contacto" class="btn-fill">
+          <svg viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .948.684l1.498 4.493a1 1 0 0 1-.502 1.21l-2.257 1.13a11.042 11.042 0 0 0 5.516 5.516l1.13-2.257a1 1 0 0 1 1.21-.502l4.493 1.498a1 1 0 0 1 .684.949V19a2 2 0 0 1-2 2h-1c-8.837 0-16-7.163-16-16V5z"/></svg>
+          Contratar ahora
+        </a>
+        <a href="#planes" class="btn-ghost">Ver planes →</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="signal-art">
+        <div class="signal-ring"></div>
+        <div class="signal-ring"></div>
+        <div class="signal-ring"></div>
+        <div class="signal-ring"></div>
+        <div class="signal-label">Lucanas — Ayacucho, PE</div>
+        <div class="signal-geo">-14.5°S 74.2°W</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">Soporte técnico directo</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">S/ 0</div>
+      <div class="stat-label">Costo de instalación</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Equipos incluidos</div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANES -->
+<section id="planes">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="section-kicker">Planes de Internet Ayacucho</div>
+      <h2>Para cada <em>necesidad</em></h2>
+      <p class="section-sub">Internet económico para hogares y empresas en Lucanas. Todos los planes incluyen instalación, router y soporte sin costos adicionales.</p>
+    </div>
+    <div class="planes-grid reveal">
+
+      <div class="plan-card">
+        <div class="plan-tag">01 — Básico</div>
+        <div class="plan-name">Plan Básico</div>
+        <div class="plan-kw">internet barato Ayacucho · plan básico wifi Lucanas</div>
+        <div class="plan-price">Precio a consultar</div>
+        <ul class="plan-features">
+          <li>Velocidad para uso cotidiano</li>
+          <li>Router incluido sin costo</li>
+          <li>Instalación gratuita en Huanca</li>
+          <li>Soporte técnico 24/7</li>
+          <li>Sin permanencia forzosa</li>
+        </ul>
+        <a href="#contacto" class="plan-btn">Solicitar info →</a>
+      </div>
+
+      <div class="plan-card featured">
+        <div class="pop-badge">Más popular</div>
+        <div class="plan-tag">02 — Hogar</div>
+        <div class="plan-name">Plan Hogar</div>
+        <div class="plan-kw">wifi hogar Lucanas · internet familiar Ayacucho</div>
+        <div class="plan-price">Precio a consultar</div>
+        <ul class="plan-features">
+          <li>Velocidad ideal para familia</li>
+          <li>Múltiples dispositivos simultáneos</li>
+          <li>Router WiFi de alta cobertura</li>
+          <li>Instalación rápida en tu zona</li>
+          <li>Soporte prioritario 24/7</li>
+          <li>Sin cortes</li>
+        </ul>
+        <a href="#contacto" class="plan-btn dark">Contratar ahora →</a>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-tag">03 — Empresa</div>
+        <div class="plan-name">Plan Empresa</div>
+        <div class="plan-kw">internet pyme Ayacucho · conexión empresarial Lucanas</div>
+        <div class="plan-price">Precio a consultar</div>
+        <ul class="plan-features">
+          <li>Velocidad dedicada para negocios</li>
+          <li>IP fija disponible</li>
+          <li>Equipos de red incluidos</li>
+          <li>Soporte técnico preferencial</li>
+          <li>SLA garantizado</li>
+        </ul>
+        <a href="#contacto" class="plan-btn">Solicitar info →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="section-kicker">Servicios ISP Ayacucho</div>
+      <h2>Todo lo que <em>incluye</em> tu plan</h2>
+      <p class="section-sub">Desde la instalación hasta el soporte continuo — nos encargamos de todo para que tú solo te conectes.</p>
+    </div>
+    <div class="servicios-grid">
+
+      <div class="serv-card reveal">
+        <div class="serv-num">01</div>
+        <div class="serv-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div class="serv-title">Instalación WiFi</div>
+        <div class="serv-desc">Técnico certificado en tu domicilio. Instalamos desde la acometida hasta la configuración del router. Sin costos ocultos ni sorpresas.</div>
+        <div class="serv-kw">instalación wifi Huanca · instalación rápida internet</div>
+      </div>
+
+      <div class="serv-card reveal reveal-delay-1">
+        <div class="serv-num">02</div>
+        <div class="serv-icon-wrap">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+        </div>
+        <div class="serv-title">Soporte Técnico 24/7</div>
+        <div class="serv-desc">Respondemos más rápido que cualquier operador nacional. Atención directa, sin call centers ni tiempos de espera interminables.</div>
+        <div class="serv-kw">soporte internet 24/7 · técnico internet Ayacucho</div>
+      </div>
+
+      <div class="serv-card reveal reveal-delay-2">
+        <div class="serv-num">03</div>
+        <div class="serv-icon-wrap">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+        </div>
+        <div class="serv-title">Equipos Incluidos</div>
+        <div class="serv-desc">Router WiFi de calidad entregado sin costo adicional. Configurado y listo desde el primer día, sin necesidad de comprar nada.</div>
+        <div class="serv-kw">router incluido Ayacucho · internet con equipo gratis</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COBERTURA -->
+<section id="cobertura">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="section-kicker">Cobertura Internet Lucanas</div>
+      <h2>¿Llegamos a <em>tu zona?</em></h2>
+      <p class="section-sub">Llevamos conectividad donde los grandes operadores no llegan. Zona rural sierra sur — nuestra especialidad.</p>
+    </div>
+    <div class="cobertura-grid reveal">
+
+      <div class="cobertura-art">
+        <div class="map-content">
+          <div class="map-ping"></div>
+          <div class="map-label-main">Huanca, Lucanas</div>
+          <div class="map-label-sub">Ayacucho — Perú</div>
+        </div>
+        <div class="map-coords">-14.5000° S, -74.2000° W</div>
+        <div class="map-tag">Cobertura activa</div>
+      </div>
+
+      <div>
+        <div class="zonas-list">
+          <div class="zona-item">
+            <div class="zona-num">01</div>
+            <div>
+              <div class="zona-name">Zona Rural Sierra Sur</div>
+              <div class="zona-desc">Conectividad para comunidades que los grandes ISP no priorizan. Sin necesidad de antenas complejas ni grandes infraestructuras.</div>
+              <div class="zona-kw">internet rural sierra sur · conectividad comunidades Perú</div>
+            </div>
+          </div>
+          <div class="zona-item">
+            <div class="zona-num">02</div>
+            <div>
+              <div class="zona-name">Huanca / Santa Lucía</div>
+              <div class="zona-desc">Cobertura completa en el anexo de Huanca y alrededores del Distrito de Santa Lucía, Provincia de Lucanas.</div>
+              <div class="zona-kw">internet Huanca Santa Lucía · ISP anexo Huanca Ayacucho</div>
+            </div>
+          </div>
+          <div class="zona-item">
+            <div class="zona-num">03</div>
+            <div>
+              <div class="zona-name">Áreas Locales Lucanas</div>
+              <div class="zona-desc">Zonas cercanas sin necesidad de grandes infraestructuras. Internet cercano, directo, sin intermediarios.</div>
+              <div class="zona-kw">ISP zona Lucanas Perú · internet cercano sin antenas</div>
+            </div>
+          </div>
+        </div>
+        <a href="#contacto" class="btn-fill" style="margin-top:2.25rem;display:inline-flex;">Consulta tu zona →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="section-kicker">Proveedor ISP local Ayacucho</div>
+      <h2>Por qué elegir <em>Infanet</em></h2>
+    </div>
+    <div class="nosotros-grid">
+
+      <div class="reveal">
+        <p class="nosotros-intro">
+          Somos una empresa nacida en Ayacucho con el propósito de mejorar la conectividad digital en la región. A diferencia de Claro, Movistar o Bitel, <em>nos enfocamos en las familias y comunidades que ellos dejan atrás.</em>
+        </p>
+        <div class="dif-row">
+          <div class="dif-icon">
+            <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <div class="dif-text"><strong>Infanet vs Claro/Movistar:</strong> tiempos de respuesta más rápidos, trato directo y precios pensados para el bolsillo local ayacuchano.</div>
+        </div>
+        <div class="dif-row">
+          <div class="dif-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <div class="dif-text"><strong>Sin cortes en Ayacucho:</strong> infraestructura local con monitoreo constante y respuesta inmediata ante cualquier falla.</div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <div class="mv-stack">
+          <div class="mv-card">
+            <div class="mv-label">Misión</div>
+            <div class="mv-text">"Brindar a las familias de Ayacucho acceso a internet accesible, estable y de calidad, con soporte técnico continuo."</div>
+          </div>
+          <div class="mv-card">
+            <div class="mv-label">Visión</div>
+            <div class="mv-text">"Convertirnos en la empresa de internet más reconocida de Ayacucho, con compromiso genuino con más familias."</div>
+          </div>
+        </div>
+        <div class="valores-grid">
+          <div class="valor-card">
+            <div class="valor-top">
+              <div class="valor-icon">
+                <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <div class="valor-title">Precios Accesibles</div>
+            </div>
+            <div class="valor-desc">Planes pensados para el bolsillo local</div>
+          </div>
+          <div class="valor-card">
+            <div class="valor-top">
+              <div class="valor-icon">
+                <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              </div>
+              <div class="valor-title">Equipos Incluidos</div>
+            </div>
+            <div class="valor-desc">Listo desde el primer día</div>
+          </div>
+          <div class="valor-card">
+            <div class="valor-top">
+              <div class="valor-icon">
+                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div class="valor-title">Atención Cercana</div>
+            </div>
+            <div class="valor-desc">Trato directo, sin intermediarios</div>
+          </div>
+          <div class="valor-card">
+            <div class="valor-top">
+              <div class="valor-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div class="valor-title">Soporte 24/7</div>
+            </div>
+            <div class="valor-desc">Disponibles ante cualquier falla</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="section-kicker">Contratar Internet Ayacucho</div>
+      <h2>Solicita tu <em>instalación</em> hoy</h2>
+      <p class="section-sub">Contáctanos por WhatsApp o completa el formulario y te respondemos en menos de 1 hora.</p>
+    </div>
+    <div class="contacto-grid">
+
+      <div class="reveal">
+        <div class="contact-cards">
+          <a href="https://wa.me/51000000000?text=Hola%20Infanet%2C%20quiero%20contratar%20internet%20en%20Lucanas" class="contact-card" target="_blank" rel="noopener">
+            <div class="cc-icon">
+              <svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .948.684l1.498 4.493a1 1 0 0 1-.502 1.21l-2.257 1.13a11.042 11.042 0 0 0 5.516 5.516l1.13-2.257a1 1 0 0 1 1.21-.502l4.493 1.498a1 1 0 0 1 .684.949V19a2 2 0 0 1-2 2h-1c-8.837 0-16-7.163-16-16V5z"/></svg>
+            </div>
+            <div>
+              <div class="cc-label">WhatsApp Business</div>
+              <div class="cc-text">Contratar por WhatsApp</div>
+              <div class="cc-sub">contratar internet Lucanas · pedir internet por WhatsApp</div>
+            </div>
+          </a>
+          <a href="https://maps.google.com" class="contact-card" target="_blank" rel="noopener">
+            <div class="cc-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="cc-label">Google Maps</div>
+              <div class="cc-text">Infanet Huanca, Ayacucho</div>
+              <div class="cc-sub">internet cerca de mí Lucanas · Infanet Huanca Ayacucho</div>
+            </div>
+          </a>
+        </div>
+        <div class="loc-box">
+          <div class="loc-label">Ubicación</div>
+          <div class="loc-text">Anexo de Huanca, Distrito de Santa Lucía<br>Provincia de Lucanas, Ayacucho — Perú</div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <div class="form-box">
+          <div class="form-title">Cotiza tu plan de internet</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" />
+            </div>
+            <div class="form-group">
+              <label for="telefono">WhatsApp</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+51 900 000 000" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="zona">Zona / Sector</label>
+            <input type="text" id="zona" name="zona" placeholder="Ej: Huanca, Santa Lucía…" />
+          </div>
+          <div class="form-group">
+            <label for="plan">Plan de interés</label>
+            <select id="plan" name="plan">
+              <option value="">Selecciona un plan</option>
+              <option>Plan Básico — internet barato Ayacucho</option>
+              <option>Plan Hogar — wifi familiar Lucanas</option>
+              <option>Plan Empresa — internet pyme Ayacucho</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje (opcional)</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos algo sobre tu zona o necesidad…"></textarea>
+          </div>
+          <button class="form-btn" onclick="handleSubmit()">Solicitar instalación →</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Infanet</div>
+      <div class="footer-tag">ISP local en Ayacucho · Lucanas, Perú</div>
+    </div>
+    <nav aria-label="Footer">
+      <ul class="footer-links">
+        <li><a href="#planes">Planes</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#cobertura">Cobertura</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="footer-copy">© 2026 Infanet · Ayacucho, Perú</div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Mobile menu
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // Reveal on scroll
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Form submit
+  function handleSubmit() {
+    const nombre = document.getElementById('nombre').value.trim();
+    const tel = document.getElementById('telefono').value.trim();
+    const zona = document.getElementById('zona').value.trim();
+    const plan = document.getElementById('plan').value;
+    if (!nombre || !tel) { alert('Por favor completa tu nombre y teléfono.'); return; }
+    const msg = encodeURIComponent(
+      `Hola Infanet! Me interesa contratar internet.\n\nNombre: ${nombre}\nTeléfono: ${tel}\nZona: ${zona || 'No especificada'}\nPlan: ${plan || 'Por definir'}\n\n¿Tienen cobertura en mi zona?`
+    );
+    window.open(`https://wa.me/51000000000?text=${msg}`, '_blank');
+  }
+</script>
+
+</body>
+</html>
